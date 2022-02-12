@@ -2502,4 +2502,21 @@ footer.site-footer {
     left: inherit !important;
     right: 20px !important; }
 
+.w-10 {
+  width: 10% !important;
+}
+
+.form-group .form-lb {
+  padding-top: 10px;
+  font-size: 0.875rem;
+  line-height: 1.4rem;
+  vertical-align: top;
+  margin-bottom: .5rem;
+}
+
+.row-cols-1 > * {
+  margin-left: 2%;
+  flex: 0 100% 100%;
+  max-width: 100%;
+}
 /*# sourceMappingURL=style.css.map */

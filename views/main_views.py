@@ -10,5 +10,5 @@ def index():
 
 # 서브페이지
 @bp.route('/maps')
-def mango():
-    return render_template('maps-gmap.html')
+def map():
+    return render_template('maps.html')
