@@ -1,6 +1,5 @@
 from flask import Blueprint, render_template, request
-
-import datetime
+from project_name.templates.job_experience import get_job_experience
 
 bp = Blueprint('main', __name__, url_prefix='/')
 
@@ -11,4 +10,41 @@ def index():
 # 서브페이지
 @bp.route('/maps')
 def map():
-    return render_template('maps.html')
+    lists = get_job_experience.get_data()
+    addrs = get_job_experience.get_addrs("전체", "전체")
+    jobs = get_job_experience.get_jobs("전체", "전체")
+    switchs = {0.0: 0, 1.0: 1, 2.0: 2, 3.0: 3, 4.0: 4, 5.0: 5}
+    return render_template('maps.html', lists=lists, switchs=switchs, addrs=addrs, jobs=jobs)
+
+# 기타 잡
+@bp.route('/get_fors', methods=("GET",))
+def get_fors():
+    addr = request.values.get("addr")
+    jobs = request.values.get("jobs")
+    return {"fors": get_job_experience.get_fors(addr, jobs)}
+
+@bp.route('/get_jobs', methods=("GET",))
+def get_jobs():
+    addr = request.values.get("addr")
+    fors = request.values.get("fors")
+    return {"jobs": get_job_experience.get_jobs(addr, fors)}
+
+@bp.route('/get_addrs', methods=("GET",))
+def get_addrs():
+    jobs = request.values.get("jobs")
+    fors = request.values.get("fors")
+    return {"addrs": get_job_experience.get_addrs(fors, jobs)}
+
+@bp.route('/get_search_result', methods=("GET",))
+def get_search_result():
+    addr = request.values.get("addr")
+    jobs = request.values.get("jobs")
+    fors = request.values.get("fors")
+    result = str(get_job_experience.get_search_result(addr, fors, jobs))
+    return {"result_lists": result}
+
+@bp.route('/get_modal_data', methods=("GET",))
+def get_modal_data():
+    data_no = request.values.get("dataNo")
+    result = get_job_experience.get_modal_data(data_no)
+    return {"modal_data": result}
