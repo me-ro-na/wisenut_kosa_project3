@@ -1,4 +1,4 @@
-window.onload = function(){
+$(document).ready(function(){
     //Toggle fullscreen
     $(".chat-bot-icon").click(function (e) {
         $(this).children('img').toggleClass('hide');
@@ -25,7 +25,12 @@ window.onload = function(){
         $('#popupModal').modal();
         // $('#popupModal').modal('hide');
     });
-};
+
+    get_chart1();
+    get_chart2();
+    get_chart3();
+    get_chart4();
+});
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
 })

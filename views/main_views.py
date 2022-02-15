@@ -1,5 +1,7 @@
 from flask import Blueprint, render_template, request
+
 from project_name.templates.job_experience import get_job_experience
+from project_name.templates.charts import charts
 
 bp = Blueprint('main', __name__, url_prefix='/')
 
@@ -48,3 +50,34 @@ def get_modal_data():
     data_no = request.values.get("dataNo")
     result = get_job_experience.get_modal_data(data_no)
     return {"modal_data": result}
+
+
+
+# ---------------- 차트 데이터 ----------------
+@bp.route('/get_chart1', methods=("GET",))
+def get_chart1():
+    chart1 = charts.get_data_chart1()
+    labels = chart1["대분류"].values.tolist()
+    values = chart1["sum"].values.tolist()
+    return {"labels": labels, "values": values}
+
+@bp.route('/get_chart2', methods=("GET",))
+def get_chart2():
+    chart2 = charts.get_data_chart2()
+    labels = chart2["job"].values.tolist()
+    values = chart2["bq30_1"].values.tolist()
+    return {"labels": labels, "values": values}
+
+@bp.route('/get_chart3', methods=("GET",))
+def get_chart3():
+    chart3 = charts.get_data_chart3()
+    labels = chart3["대분류"].values.tolist()
+    values = chart3["bq3"].values.tolist()
+    return {"labels": labels, "values": values}
+
+@bp.route('/get_chart4', methods=("GET",))
+def get_chart4():
+    chart3 = charts.get_data_chart4()
+    labels = chart3["job"].values.tolist()
+    values = chart3["bq19"].values.tolist()
+    return {"labels": labels, "values": values}
