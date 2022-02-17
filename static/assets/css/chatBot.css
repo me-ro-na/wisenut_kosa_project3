@@ -76,13 +76,12 @@
 }
 .chat-screen .chat-body {
     padding: 25px;
-    display: inline-block;
     min-height: 382px;
     max-height: 382px;
     background: #fbfbfb;
 }
 .chat-screen .chat-body .chat-start {
-    border: 1px solid #f8d4ff;
+    border: 1px solid #b8dbe6;
     width: 150px;
     border-radius: 50px;
     padding: 6px 10px;
@@ -101,8 +100,20 @@
     margin-bottom: 10px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.02);
 }
+.chat-screen .chat-body .chat-info {
+    border: 1px solid #b8dbe6;
+    border-radius: 50px;
+    padding: 6px 10px;
+    font-size: 12px;
+    margin: 0 auto;
+    clear: both;
+    text-align: center;
+    margin-bottom: 15px;
+    background: #fff;
+}
 .chat-screen .chat-body .chat-bubble.you {
-    background-image: linear-gradient(to right, #2ba2aa, #13e2e2);
+    background-color: #80dfdf;
+    /* border: 1px solid #7ad6d2; */
     color: #fff;
     border-radius: 0 15px 15px 15px;
     align-self: flex-start;
@@ -110,6 +121,7 @@
 }
 .chat-screen .chat-body .chat-bubble.me {
     background-image: linear-gradient(to right, #FFFFFF, #FFFFFF, #FFFFFF, #FFFFFF, #FFFFFF);
+    border: 1px solid #509cb3;
     color: #888ea8;
     border-radius: 15px 0px 15px 15px;
     float: right;
@@ -136,7 +148,7 @@
     transition: border-color 0.5s ease;
 }
 .chat-screen .chat-input input:focus {
-    border-color: #f9dcff;
+    border-color: #b8dbe6;
 }
 .chat-screen .chat-input input:focus + .input-action-icon a svg.feather-send {
     color: #13e2e2;

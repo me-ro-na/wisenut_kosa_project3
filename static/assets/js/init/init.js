@@ -6,16 +6,11 @@ $(document).ready(function(){
         $('.chat-screen').toggleClass('show-chat');
     });
     $('.chat-mail button').click(function () {
+        start_chat()
         $('.chat-mail').addClass('hide');
         $('.chat-body').removeClass('hide');
         $('.chat-input').removeClass('hide');
         $('.chat-header-option').removeClass('hide');
-    });
-    $('.end-chat').click(function () {
-        $('.chat-body').addClass('hide');
-        $('.chat-input').addClass('hide');
-        $('.chat-session-end').removeClass('hide');
-        $('.chat-header-option').addClass('hide');
     });
 
     $(document).on("click", "#lists-body>tr", function(e) {
@@ -26,11 +21,32 @@ $(document).ready(function(){
         // $('#popupModal').modal('hide');
     });
 
+    let week = new Array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
+    let now = new Date();
+    let todayLabel = week[now.getDay()] + "day";
+    let hour = now.getHours();
+    let h = hour < 12 ? " AM" : " PM";
+    let result = todayLabel + ", " + hour + ":" + now.getMinutes() + h;
+
+    $(".chat-body>.chat-start").text(result);
+
     get_chart1();
     get_chart2();
     get_chart3();
     get_chart4();
 });
+
+function getNow() {
+    let week = new Array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
+    let now = new Date();
+    let todayLabel = week[now.getDay()] + "day";
+    let hour = now.getHours();
+    let h = hour < 12 ? "AM" : "PM";
+    let result = todayLabel + ", " + hour + ":" + now.getMinutes() + h;
+
+    $(".chart-body>chart-start").text(getNow());
+}
+
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
 })

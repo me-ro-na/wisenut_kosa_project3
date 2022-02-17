@@ -27,12 +27,16 @@ function ct1(chart1Data) {
                 },
             },
             scales: {
-                xAxes: [ {
+                xAxes: [{
                     display: true,
                     gridLines: {
                         display: false,
                         drawBorder: false
+                    },
+                    ticks: {
+                        fontSize: 14
                     }
+                    
                 } ],
                 yAxes: [ {
                     display: true,
@@ -45,6 +49,7 @@ function ct1(chart1Data) {
                         labelString: '합계'
                     },
                     ticks: {
+                        fontSize: 14,
                         stepSize: 1
                     }
                 }]
@@ -66,8 +71,14 @@ function ct2(chart2Data) {
             scales: {
                 yAxes: [{
                     ticks: {
+                        fontSize: 16,
                         beginAtZero: true,
                         stepSize: 2000
+                    }
+                }],
+                xAxes: [{
+                    ticks: {
+                        fontSize: 14
                     }
                 }]
             }
@@ -82,9 +93,6 @@ function ct3(chart3Data) {
         type: 'radar',
         data: chart3Data,
         options: {
-            legend: {
-                position: 'top'
-            },
             scale: {
                 ticks: {
                     beginAtZero: true
@@ -119,13 +127,13 @@ function get_chart1() {
             var chart1Data = {
                 labels : labels,
                 datasets: [{
-                    backgroundColor: 'rgba(0,200,155,.35)',
-                    borderColor: 'rgba(0,200,155,0.60)',
+                    backgroundColor: 'rgba(176, 18, 0, 0.12)',
+                    borderColor: 'rgba(176, 18, 0, 0.26)',
                     borderWidth: 3.5,
                     pointStyle: 'circle',
                     pointRadius: 5,
                     pointBorderColor: 'transparent',
-                    pointBackgroundColor: 'rgba(0,200,155,0.60)',
+                    pointBackgroundColor: 'rgba(176, 18, 0, 0.26)',
                     data: values
                 }]
             }
@@ -153,9 +161,21 @@ function get_chart2() {
                 datasets: [{
                     label: "연봉",
                     data: values,
-                    borderColor: "rgba(0, 194, 146, 0.9)",
-                    borderWidth: "0",
-                    backgroundColor: "rgba(0, 194, 146, 0.5)"
+                    backgroundColor: [
+                        "rgb(54,39,6,.58)",
+                        "rgba(142,128,106,.58)",
+                        "rgba(195,176,145,.58)",
+                        "rgba(228,205,167,.58)",
+                        "rgba(255,230,188,.58)"
+                    ],
+                    borderColor: [
+                        "rgb(54, 39, 6)",
+                        "rgb(142, 128, 106)",
+                        "rgb(195, 176, 145)",
+                        "rgb(228, 205, 167)",
+                        "rgb(255, 230, 188)"
+                    ],
+                    borderWidth: "0"
                 }]
             }
             ct2(chart2Data);
@@ -184,9 +204,9 @@ function get_chart3() {
                 datasets: [{
                     label: 'Degree',
                     data: values,
-                    borderColor: "rgba(0, 194, 146, 0.6)",
+                    borderColor: "rgb(152, 180, 170)",
                     borderWidth: "1",
-                    backgroundColor: "rgba(0, 194, 146, 0.4)"
+                    backgroundColor: "rgba(152, 180, 170, .58)"
                 }]
             }
             ct3(chart3Data);
@@ -212,11 +232,11 @@ function get_chart4() {
                 datasets: [{
                     data: values,
                     backgroundColor: [
-                        "rgba(0, 194, 146,0.9)",
-                        "rgba(0, 194, 146,0.8)",
-                        "rgba(0, 194, 146,0.7)",
-                        "rgba(0,0,0,0.2)",
-                        "rgba(0, 194, 146,0.5)"
+                        "rgba(101, 93, 138, .58)",
+                        "rgba(120, 151, 171, .58)",
+                        "rgba(216, 133, 163, .58)",
+                        "rgba(253, 206, 185, .58)",
+                        "rgba(0,0,0,0.2)"
                     ]
                 }],
                 labels: labels

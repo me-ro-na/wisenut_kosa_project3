@@ -1,3 +1,4 @@
+from urllib import response
 from flask import Blueprint, render_template, request
 
 from project_name.templates.job_experience import get_job_experience
@@ -81,3 +82,34 @@ def get_chart4():
     labels = chart3["job"].values.tolist()
     values = chart3["bq19"].values.tolist()
     return {"labels": labels, "values": values}
+
+
+
+
+# ---------------- 챗봇 서버 ----------------
+@bp.route('/server', methods=("POST",))
+def server():
+    import socket
+    import json
+    # 챗봇 엔진 서버 접속 정보
+    host = "49.171.56.73"  # 집 - 챗봇 엔진 서버 IP 주소
+    port = 5050  # 챗봇 엔진 서버 통신 포트
+    query = request.form["query"]
+    result = ""
+    if query != "quit":
+        # 챗봇 엔진 서버 연결
+        mySocket = socket.socket()
+        mySocket.connect((host, port))
+
+        # 챗봇 엔진 질의 요청
+        json_data = {
+            'Query': query,
+            'BotType': "MyService"
+        }
+        message = json.dumps(json_data)
+        mySocket.send(message.encode())
+
+        # 챗봇 엔진 답변 출력
+        data = mySocket.recv(2048).decode()
+        result = json.loads(data)
+    return result        
