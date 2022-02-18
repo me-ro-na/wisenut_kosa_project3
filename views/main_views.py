@@ -1,8 +1,8 @@
-from urllib import response
 from flask import Blueprint, render_template, request
+import os
 
-from project_name.templates.job_experience import get_job_experience
-from project_name.templates.charts import charts
+from pj3.templates.job_experience import get_job_experience
+from pj3.templates.charts import charts
 
 bp = Blueprint('main', __name__, url_prefix='/')
 
@@ -92,7 +92,7 @@ def server():
     import socket
     import json
     # 챗봇 엔진 서버 접속 정보
-    host = "49.171.56.73"  # 집 - 챗봇 엔진 서버 IP 주소
+    host = "182.215.79.79"  # 챗봇 엔진 서버 IP 주소
     port = 5050  # 챗봇 엔진 서버 통신 포트
     query = request.form["query"]
     result = ""
@@ -100,11 +100,10 @@ def server():
         # 챗봇 엔진 서버 연결
         mySocket = socket.socket()
         mySocket.connect((host, port))
-
+        print(mySocket.getsockname())
         # 챗봇 엔진 질의 요청
         json_data = {
-            'Query': query,
-            'BotType': "MyService"
+            'Query': query
         }
         message = json.dumps(json_data)
         mySocket.send(message.encode())
@@ -112,4 +111,4 @@ def server():
         # 챗봇 엔진 답변 출력
         data = mySocket.recv(2048).decode()
         result = json.loads(data)
-    return result        
+    return result

@@ -3,7 +3,7 @@ import numpy as np
 import math
 import os
 
-BASE_DF = pd.read_csv(rf"{os.path.abspath('project_name/static/csvs/career_experience.csv')}")
+BASE_DF = pd.read_csv(rf"{os.path.abspath('pj3/static/csvs/career_experience.csv')}")
 
 def get_data():
     result = to_trunc(BASE_DF).values.tolist()

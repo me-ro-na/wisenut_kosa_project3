@@ -141,8 +141,8 @@ function get_chart1() {
         },
         error: function(request,status,error){
             // console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-            console.log(request.responseText);
-            // console.log("code:"+request.status+"\n"+"message:"+"\n"+"error:"+error);
+            // console.log(request.responseText);
+            console.log("code:"+request.status+"\n"+"message:"+"\n"+"error:"+error);
         }
     });
     return false;
@@ -182,8 +182,8 @@ function get_chart2() {
         },
         error: function(request,status,error){
             // console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-            console.log(request.responseText);
-            // console.log("code:"+request.status+"\n"+"message:"+"\n"+"error:"+error);
+            // console.log(request.responseText);
+            console.log("code:"+request.status+"\n"+"message:"+"\n"+"error:"+error);
         }
     });
     return false;
@@ -213,8 +213,8 @@ function get_chart3() {
         },
         error: function(request,status,error){
             // console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-            console.log(request.responseText);
-            // console.log("code:"+request.status+"\n"+"message:"+"\n"+"error:"+error);
+            // console.log(request.responseText);
+            console.log("code:"+request.status+"\n"+"message:"+"\n"+"error:"+error);
         }
     });
     return false;
@@ -245,8 +245,8 @@ function get_chart4() {
         },
         error: function(request,status,error){
             // console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-            console.log(request.responseText);
-            // console.log("code:"+request.status+"\n"+"message:"+"\n"+"error:"+error);
+            // console.log(request.responseText);
+            console.log("code:"+request.status+"\n"+"message:"+"\n"+"error:"+error);
         }
     });
     return false;

@@ -1,14 +1,14 @@
 import openpyxl
 import sys
 [sys.path.append(i) for i in ['.', '..']]
-from project_name.chatbot.utils.Database import Database
+from pj3.chatbot.utils.Database import Database
 
 
 # 학습 데이터 초기화
 def all_clear_train_data(db):
     # 기존 학습 데이터 삭제
     sql = '''
-            DELETE chatbot_train_data
+            DELETE FROM chatbot_train_data
         '''
     db.execute(sql)
     # auto increment 초기화
@@ -47,7 +47,7 @@ def sp_query(row):
 
 import os
 import pandas as pd
-train_file = rf'{os.path.abspath("project_name/chatbot/datasets/rule_test.csv")}'
+train_file = rf'{os.path.abspath("pj3/chatbot/datasets/rule_test.csv")}'
 db = None
 try:
     db = Database()

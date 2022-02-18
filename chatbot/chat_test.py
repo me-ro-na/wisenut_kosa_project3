@@ -32,9 +32,9 @@ def knowcode_list_to_job(cod):
   return job_list
   
 #csv파일 불러오기###########################################
-df = pd.read_csv(rf'{os.path.abspath("project_name/chatbot/datasets/rule_test.csv")}')
-df2 = pd.read_csv(rf'{os.path.abspath("project_name/chatbot/datasets/first_2020.csv")}')
-df3 = pd.read_csv(rf'{os.path.abspath("project_name/chatbot/datasets/2020_code.csv")}')
+df = pd.read_csv(rf'{os.path.abspath("pj3/chatbot/datasets/rule_test.csv")}')
+df2 = pd.read_csv(rf'{os.path.abspath("pj3/chatbot/datasets/first_2020.csv")}')
+df3 = pd.read_csv(rf'{os.path.abspath("pj3/chatbot/datasets/2020_code.csv")}')
 
 
 print('안녕하세요. 진로 상담사 입니다.\n무엇을 도와 드릴까요?')

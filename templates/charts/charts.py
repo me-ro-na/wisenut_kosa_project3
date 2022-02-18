@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-DF = pd.read_csv(rf"{os.path.abspath('project_name/static/csvs/charts.csv')}")
+DF = pd.read_csv(rf"{os.path.abspath('pj3/static/csvs/charts.csv')}")
 
 def get_data_chart1():
     df2 = DF[["대분류", "bq12_1", "bq12_2", "bq12_3", "bq12_4", "bq12_5"]]

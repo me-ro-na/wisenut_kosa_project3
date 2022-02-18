@@ -21,7 +21,7 @@ $(document).ready(function(){
         // $('#popupModal').modal('hide');
     });
 
-    let week = new Array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
+    let week = new Array("Sun", "Mon", "Tues", "Wednes", "Thurs", "Fri", "Satur");
     let now = new Date();
     let todayLabel = week[now.getDay()] + "day";
     let hour = now.getHours();
