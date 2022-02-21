@@ -7,15 +7,15 @@ import sys
 [sys.path.append(i) for i in ['.', '..']]
 # 파일 임포트 오류 방지
 
-from pj3.chatbot.utils.Database import Database
-from pj3.chatbot.utils.BotServer import BotServer
-from pj3.chatbot.utils.FindAnswer import FindAnswer
+from jobabot.chatbot.utils.Database import Database
+from jobabot.chatbot.utils.BotServer import BotServer
+from jobabot.chatbot.utils.FindAnswer import FindAnswer
 
 
 
-df = pd.read_csv(rf'{os.path.abspath("pj3/chatbot/datasets/rule_test.csv")}')
-df2 = pd.read_csv(rf'{os.path.abspath("pj3/chatbot/datasets/first_2020.csv")}')
-df3 = pd.read_csv(rf'{os.path.abspath("pj3/chatbot/datasets/2020_code.csv")}')
+df = pd.read_csv(rf'{os.path.abspath("jobabot/chatbot/datasets/rule_test.csv")}')
+df2 = pd.read_csv(rf'{os.path.abspath("jobabot/chatbot/datasets/first_2020.csv")}')
+df3 = pd.read_csv(rf'{os.path.abspath("jobabot/chatbot/datasets/2020_code.csv")}')
 
 # 규칙 만족 여부
 def matching(pattern, sentence):
@@ -116,7 +116,7 @@ def to_client(conn, addr):
             "Query" : query,
             "Answer": result
         }
-        f = open(rf"{os.path.abspath('pj3/chatbot/datasets/export_msg.txt')}", "a", encoding="UTF-8")
+        f = open(rf"{os.path.abspath('jobabot/chatbot/datasets/export_msg.txt')}", "a", encoding="UTF-8")
         f.write(f"[{str(datetime.datetime.now())[:-7]}] [{addr[0]}, {addr[1]}]: {query}\n")
         for i in result:
             f.write(f"[{str(datetime.datetime.now())[:-7]}] [Answer]: {i}\n")

@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-DF = pd.read_csv(rf"{os.path.abspath('pj3/static/csvs/charts.csv')}")
+DF = pd.read_csv(rf"{os.path.abspath('jobabot/static/csvs/charts.csv')}")
 
 def get_data_chart1():
     df2 = DF[["대분류", "bq12_1", "bq12_2", "bq12_3", "bq12_4", "bq12_5"]]
@@ -35,3 +35,15 @@ def get_data_chart4():
     result = df2.groupby(df2['job']).mean().sort_values(by=['bq19'], ascending=False).head(5).reset_index('job')
 
     return result
+
+def get_data_chart5():
+    df = pd.read_csv(rf"{os.path.abspath('jobabot/static/csvs/chart5.csv')}", encoding="utf-8-sig")
+
+    models = df.columns[2:5].tolist()
+    xticks = df.iloc[:5,1].tolist()
+    data = {"loss_people":df.iloc[:5,-3].tolist(),
+            "loss_percent":df.iloc[:5,-2].tolist(),
+    		"get_people":df.iloc[:5,-1].tolist(),
+            "xticks": xticks,
+            "models": models}
+    return data

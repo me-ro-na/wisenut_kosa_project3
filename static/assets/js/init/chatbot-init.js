@@ -36,7 +36,7 @@ function send_message() {
 
 function send(query) {
     $.ajax({
-        url: "/server",
+        url: "/start_jobabot",
         type: "post",
         data: {"query": query},
         success: function(data) {

@@ -9,7 +9,7 @@ import os
 warnings.filterwarnings(action = 'ignore')
 
 
-train_2020 = pd.read_csv(rf'{os.path.abspath("pj3/chatbot/datasets/KNOW_2020.csv")}')
+train_2020 = pd.read_csv(rf'{os.path.abspath("jobabot/chatbot/datasets/KNOW_2020.csv")}')
 
 
 # null값이 빈공간으로 표기돼서 Nan으로 표시하도록 함
@@ -36,4 +36,4 @@ for i, col in enumerate(abil):
 df["knowcode"] = train_2020["knowcode"]
 
 #배출
-df.to_csv(rf'{os.path.abspath("pj3/chatbot/datasets/first_2020.csv")}',index=False)
+df.to_csv(rf'{os.path.abspath("jobabot/chatbot/datasets/first_2020.csv")}',index=False)

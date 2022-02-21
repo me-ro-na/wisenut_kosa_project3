@@ -114,6 +114,47 @@ function ct4(chart4Data) {
     });
 };
 
+function ct5(chart5Data) {
+    var ctx = document.getElementById("chart5").getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: chart5Data,
+        options: {
+            scales: {
+                xAxes: [{
+                    stacked: true,
+                    ticks: {
+                        fontSize: 16
+                    }
+                }, {
+                    id: 'x-axis-2',
+                    type: 'linear',
+                    position: 'bottom',
+                    display: true,
+                    ticks: {
+                    beginAtZero: true,
+                    min: 0,
+                    max: 15,
+                    stepSize: 1
+                    }
+                }],
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        max: 1.2,
+                        fontSize: 16
+                    },
+                    stacked: true,
+                }]
+            }
+        }
+    });
+}
+  
+
+
+  
+
 function get_chart1() {
     $.ajax({
         url: "/get_chart1",
@@ -242,6 +283,51 @@ function get_chart4() {
                 labels: labels
             }
             ct4(chart4Data);
+        },
+        error: function(request,status,error){
+            // console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+            // console.log(request.responseText);
+            console.log("code:"+request.status+"\n"+"message:"+"\n"+"error:"+error);
+        }
+    });
+    return false;
+}
+
+function get_chart5() {
+    $.ajax({
+        url: "/get_chart5",
+        type: "get",
+        success: function(data) {
+            let loss_people = data.loss_people;
+            let loss_percent = data.loss_percent;
+            let get_people = data.get_people;
+            let xticks = data.xticks;
+            let models = data.models;
+            
+            let chart5Data = {
+                labels: xticks,
+                datasets: [
+                    {
+                        label: models[0],
+                        backgroundColor: "rgba(211, 222, 220, 0.9)",
+                        data: loss_people,
+                        stack: 'Stack 1'
+                    },
+                    {
+                        label: models[1],
+                        backgroundColor: "rgba(146, 169, 189, 0.9)",
+                        data: loss_percent,
+                        stack: 'Stack 2'
+                    },
+                    {
+                        label: models[2],
+                        backgroundColor: "rgba(255, 239, 239, 0.9)",
+                        data: get_people,
+                        stack: 'Stack 3'
+                    }
+                ]
+            };
+            ct5(chart5Data);
         },
         error: function(request,status,error){
             // console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);

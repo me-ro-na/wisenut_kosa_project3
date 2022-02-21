@@ -1,7 +1,6 @@
-import openpyxl
 import sys
 [sys.path.append(i) for i in ['.', '..']]
-from pj3.chatbot.utils.Database import Database
+from jobabot.chatbot.utils.Database import Database
 
 
 # 학습 데이터 초기화
@@ -47,7 +46,7 @@ def sp_query(row):
 
 import os
 import pandas as pd
-train_file = rf'{os.path.abspath("pj3/chatbot/datasets/rule_test.csv")}'
+train_file = rf'{os.path.abspath("jobabot/chatbot/datasets/rule_test.csv")}'
 db = None
 try:
     db = Database()

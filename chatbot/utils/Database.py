@@ -4,7 +4,7 @@ import logging
 
 import sys
 [sys.path.append(i) for i in ['.', '..']]
-from pj3.chatbot.config.DatabaseConfig import *
+from jobabot.chatbot.config.DatabaseConfig import *
 
 class Database:
     '''

@@ -34,6 +34,7 @@ $(document).ready(function(){
     get_chart2();
     get_chart3();
     get_chart4();
+    get_chart5();
 });
 
 function getNow() {

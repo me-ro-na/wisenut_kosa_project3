@@ -1,8 +1,7 @@
 from flask import Blueprint, render_template, request
-import os
 
-from pj3.templates.job_experience import get_job_experience
-from pj3.templates.charts import charts
+from jobabot.templates.job_experience import get_job_experience
+from jobabot.templates.charts import charts
 
 bp = Blueprint('main', __name__, url_prefix='/')
 
@@ -78,21 +77,26 @@ def get_chart3():
 
 @bp.route('/get_chart4', methods=("GET",))
 def get_chart4():
-    chart3 = charts.get_data_chart4()
-    labels = chart3["job"].values.tolist()
-    values = chart3["bq19"].values.tolist()
+    chart4 = charts.get_data_chart4()
+    labels = chart4["job"].values.tolist()
+    values = chart4["bq19"].values.tolist()
     return {"labels": labels, "values": values}
+
+@bp.route('/get_chart5', methods=("GET",))
+def get_chart5():
+    chart5 = charts.get_data_chart5()
+    return chart5
 
 
 
 
 # ---------------- 챗봇 서버 ----------------
-@bp.route('/server', methods=("POST",))
+@bp.route('/start_jobabot', methods=("POST",))
 def server():
     import socket
     import json
     # 챗봇 엔진 서버 접속 정보
-    host = "182.215.79.79"  # 챗봇 엔진 서버 IP 주소
+    host = "127.0.0.1"  # 챗봇 엔진 서버 IP 주소
     port = 5050  # 챗봇 엔진 서버 통신 포트
     query = request.form["query"]
     result = ""
@@ -100,7 +104,6 @@ def server():
         # 챗봇 엔진 서버 연결
         mySocket = socket.socket()
         mySocket.connect((host, port))
-        print(mySocket.getsockname())
         # 챗봇 엔진 질의 요청
         json_data = {
             'Query': query

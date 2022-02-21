@@ -6,12 +6,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ela Admin - HTML5 Admin Template</title>
-    <meta name="description" content="Ela Admin - HTML5 Admin Template">
+    <title>잡아봇</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
-    <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
+    <link rel="apple-touch-icon" href="{{url_for('static', filename='images/j_logo.png')}}">
+    <link rel="shortcut icon" href="{{url_for('static', filename='images/j_logo.png')}}">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
@@ -54,8 +53,8 @@
         <header id="header" class="header">
             <div class="top-left">
                 <div class="navbar-header">
-                <a class="navbar-brand" href="./"><img src="{{url_for('static', filename='images/logo.png')}}" alt="Logo"></a>
-                <a class="navbar-brand hidden" href="./"><img src="{{url_for('static', filename='images/logo2.png')}}" alt="Logo"></a>
+                <a class="navbar-brand" href="./"><img src="{{url_for('static', filename='images/jobabot_logo.png')}}" alt="Logo"></a>
+                <!-- <a class="navbar-brand hidden" href="./"><img src="{{url_for('static', filename='images/j_logo.png')}}" alt="Logo"></a> -->
                 </div>
             </div>
             <div class="top-right">
@@ -79,7 +78,7 @@
                 <div class="row">
                 <div class="col-sm-6">Copyright &copy; 2022</div>
                 <div class="col-sm-6 text-right">
-                    Designed by <a href="https://github.com/me-ro-na/wisenut_kosa_project3">team LeeKim</a>
+                    Designed by <a href="https://github.com/me-ro-na/wisenut_kosa_project3">team Jobs</a>
                 </div>
                 </div>
             </div>
@@ -104,7 +103,7 @@
         <div class="chat-mail">
             <div class="row">
                 <div class="col-md-12 text-center mb-2">
-                    <p>Hi 👋!</p>
+                    <p>Hi 👋! 잡아봇과 함께 미래를 꿈꿔요</p>
                 </div>
             </div>
             <div class="row">
@@ -112,16 +111,12 @@
                     <button class="btn btn-primary btn-rounded btn-block">Start Chat</button>
                 </div>
             <div class="col-md-12">
-                <div class="powered-by">뭐라고 쓰지</div>
+                <div class="powered-by">job a bot</div>
             </div>
             </div>
         </div>
         <div class="chat-body hide">
             <div class="chat-start"></div>
-            <!-- <div class="chat-bubble you">Welcome to our site, if you need help simply reply to this message, we are online and ready to help.</div> -->
-            <!-- <div class="chat-bubble me">Hi, I am back</div>
-            <div class="chat-bubble me">I just want my Report Status.</div>
-            <div class="chat-bubble me">As i am not getting any weekly reports nowadays.</div> -->
             <div class="chat-bubble you hide" id="loading">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto;display: block;shape-rendering: auto;width: 43px;height: 20px;" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
                     <circle cx="0" cy="44.1678" r="15" fill="#ffffff">
@@ -136,13 +131,12 @@
         <div class="chat-input hide">
             <input id="my-message" type="text" placeholder="Type a message...">
             <div class="input-action-icon">
-                <!-- <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-paperclip"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg></a> -->
                 <a id="send-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></a>
             </div>
         </div>
         <div class="chat-session-end hide">
             <h5>상담이 종료되었습니다.</h5>
-            <p>상담에 참여해 주셔서 감사합니다 ☺️,<br>이번 상담은 어떠셨나요? :</p>
+            <p>잡아봇을 이용해 주셔서 감사합니다 ☺️,<br>이번 상담은 어떠셨나요? :</p>
             <div class="rate-me">
                 <div class="rate-bubble great">
                     <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-thumbs-up"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg></span>
@@ -154,7 +148,7 @@
                 </div>
             </div>
             <a href="https://github.com/me-ro-na/wisenut_kosa_project3" class="transcript-chat">우리 깃 볼래여?</a>
-            <div class="powered-by">뭐라고쓰지</div>
+            <div class="powered-by">job a bot</div>
         </div>
     </div>
     <div class="chat-bot-icon">
