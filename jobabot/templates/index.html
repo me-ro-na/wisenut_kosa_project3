@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="row">
+
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mb-3">직업별 직무 만족도 </h4>
+                <canvas id="chart1"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mb-3">현존직업 관련 연봉(상위5개) </h4>
+                <canvas id="chart2"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6" >
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mb-3">직업 안정성(상위 10개) </h4>
+                <canvas id="chart3"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mb-3">5년 이내 사라질 비율이 높은 직업(상위5개) </h4>
+                <canvas id="chart4"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mb-3">직종별 인력부족률 및 채용계획인원 (단위:천명) </h4>
+                <canvas id="chart5"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{url_for('static', filename='assets/js/init/charts-init.js')}}"></script>
+{% endblock %}

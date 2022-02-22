@@ -1,0 +1,15 @@
+.dropdown-toggle:after { display: none; }
+.btn-rounded {
+    -webkit-border-radius: 1.875rem !important;
+    -moz-border-radius: 1.875rem !important;
+    -ms-border-radius: 1.875rem !important;
+    -o-border-radius: 1.875rem !important;
+    border-radius: 1.875rem !important;
+}
+
+.hide{
+    display: none !important;
+}
+.cursor-pointer {
+    cursor: pointer;
+}

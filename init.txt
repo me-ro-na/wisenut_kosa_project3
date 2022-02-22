@@ -1,0 +1,28 @@
+- 가상환경 설정
+    (base) > conda create -n pj3 python=3.8
+    (base) > activate pj3
+    (pj3) > conda install -c conda-forge numpy=1.19.5 jupyterlab pandas seaborn xlrd openpyxl pymysql sqlalchemy scikit-learn xgboost tensorflow nltk JPype1 gensim=3.8.3 python-levenshtein spyder
+    (pj3) > python -m pip install --no-cache-dir konlpy PyKomoran kss git+https://github.com/ssut/py-hanspell.git
+    (pj3) > python --version
+    (pj3) > pip install Flask
+    (pj3) > pip install kiwipiepy
+
+- DB 테이블 생성
+    로그인 후
+    [(none)] > use mysql
+    [(mysql)] >
+        CREATE TABLE chatbot_train_data (
+            id INT UNSIGNED AUTO_INCREMENT,
+            query TEXT NULL,
+            answer TEXT NOT NULL,
+            type TEXT NOT NULL,
+            PRIMARY_KEY(id)
+        );
+    [(mysql)] > commit;
+    후에 jobabot/chatbot/train_tools/qna/load_train_data.py 파일 실행
+    데이터 INSERT 된 것 확인 후 VSCode터미널 실행
+
+- 실행
+    (pj3) > set_flask.cmd
+    (pj3) > flask run
+    127.0.0.1:5000/ 접속
